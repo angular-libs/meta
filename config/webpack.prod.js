@@ -60,16 +60,16 @@ module.exports = {
      *
      * See: http://webpack.github.io/docs/configuration.html#output-filename
      */
-    filename: 'meta.umd.min.js',
+    filename: 'core.umd.min.js',
 
     libraryTarget: 'umd',
-    library: 'meta'
+    library: 'ngx-meta'
   },
 
   /**
    * Require those dependencies but don't bundle them
    */
-  externals: [/^@angular\//, /^rxjs\//, /^lodash/],
+  externals: [/^@angular\//, /^rxjs\//],
 
   /**
    * Options affecting the normal modules.
@@ -125,7 +125,7 @@ module.exports = {
      */
     new contextReplacementPlugin(
       // fix the warning in ./~/@angular/core/src/linker/system_js_ng_module_factory_loader.js
-      /angular([\\\/])core([\\\/])(esm([\\\/])src|src)([\\\/])linker/,
+      /angular([\\\/])core([\\\/])@angular/,
       helpers.root('src')
     ),
 

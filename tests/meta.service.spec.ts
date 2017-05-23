@@ -9,10 +9,10 @@ import 'rxjs/add/observable/of';
 import * as _ from 'lodash';
 
 // module
-import { MetaLoader, MetaStaticLoader, MetaService, PageTitlePositioning } from '../index';
-import { TestBootstrapComponent, testSettings, defaultSettings, emptySettings, testModuleConfig } from './index.spec';
+import { MetaLoader, MetaService, MetaStaticLoader, PageTitlePositioning } from '../index';
+import { defaultSettings, emptySettings, TestBootstrapComponent, testModuleConfig, testSettings } from './index.spec';
 
-describe('@nglibs/meta:',
+describe('@ngx-meta/core:',
   () => {
     describe('MetaService',
       () => {
@@ -150,7 +150,7 @@ describe('@nglibs/meta:',
               const settings = _.cloneDeep(defaultSettings);
               settings.applicationName = 'Tour of (lazy/busy) heroes';
               settings.defaults = {
-                'description': 'Mighty Mouse is an animated superhero mouse character'
+                description: 'Mighty Mouse is an animated superhero mouse character'
               };
 
               const metaFactory = () => new MetaStaticLoader(settings);
